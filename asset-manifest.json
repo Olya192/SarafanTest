@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/SarafanTest/static/css/main.63f32f33.css",
-    "main.js": "/SarafanTest/static/js/main.697a44a2.js",
-    "static/js/453.3472f088.chunk.js": "/SarafanTest/static/js/453.3472f088.chunk.js",
-    "static/media/1486348529-back-backwards-repeat-arrows-arrow_80455.svg": "/SarafanTest/static/media/1486348529-back-backwards-repeat-arrows-arrow_80455.6b791c06be0aebf8fa32fe838d0e5aa7.svg",
-    "static/media/biggarbagebin_121980.svg": "/SarafanTest/static/media/biggarbagebin_121980.020dee103726d4c645b8f59cb4d4eebd.svg",
-    "index.html": "/SarafanTest/index.html",
-    "static/media/heart_like_love_twitter_icon_127132.svg": "/SarafanTest/static/media/heart_like_love_twitter_icon_127132.d1126d78615b3f7421d981059a09ca7e.svg",
-    "static/media/3643770-favorite-heart-like-likes-love-loved_113432.svg": "/SarafanTest/static/media/3643770-favorite-heart-like-likes-love-loved_113432.98fffa4a7ae559f6db69611338f21d6a.svg",
-    "main.63f32f33.css.map": "/SarafanTest/static/css/main.63f32f33.css.map",
-    "main.697a44a2.js.map": "/SarafanTest/static/js/main.697a44a2.js.map",
-    "453.3472f088.chunk.js.map": "/SarafanTest/static/js/453.3472f088.chunk.js.map"
+    "main.css": "/sarafan-test/static/css/main.63f32f33.css",
+    "main.js": "/sarafan-test/static/js/main.a7b1be26.js",
+    "static/js/453.d99998ae.chunk.js": "/sarafan-test/static/js/453.d99998ae.chunk.js",
+    "static/media/1486348529-back-backwards-repeat-arrows-arrow_80455.svg": "/sarafan-test/static/media/1486348529-back-backwards-repeat-arrows-arrow_80455.6b791c06be0aebf8fa32fe838d0e5aa7.svg",
+    "static/media/biggarbagebin_121980.svg": "/sarafan-test/static/media/biggarbagebin_121980.020dee103726d4c645b8f59cb4d4eebd.svg",
+    "index.html": "/sarafan-test/index.html",
+    "static/media/heart_like_love_twitter_icon_127132.svg": "/sarafan-test/static/media/heart_like_love_twitter_icon_127132.d1126d78615b3f7421d981059a09ca7e.svg",
+    "static/media/3643770-favorite-heart-like-likes-love-loved_113432.svg": "/sarafan-test/static/media/3643770-favorite-heart-like-likes-love-loved_113432.98fffa4a7ae559f6db69611338f21d6a.svg",
+    "main.63f32f33.css.map": "/sarafan-test/static/css/main.63f32f33.css.map",
+    "main.a7b1be26.js.map": "/sarafan-test/static/js/main.a7b1be26.js.map",
+    "453.d99998ae.chunk.js.map": "/sarafan-test/static/js/453.d99998ae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.63f32f33.css",
-    "static/js/main.697a44a2.js"
+    "static/js/main.a7b1be26.js"
   ]
 }
