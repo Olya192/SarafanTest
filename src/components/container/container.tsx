@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { getCards, getLikedCards } from "../../Api";
 import { updateCards } from "../../slice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-import { title } from "process";
+
 
 export const Container = () => {
   const [searchValue, setSearchValue] = useState("");
