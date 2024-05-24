@@ -32,6 +32,7 @@ export const Container = () => {
           (item: CardInfo) => !delCard.find((el) => el === item.id)
         );
         console.log("filterCard", filterCard);
+        console.log("delCard", delCard);
         setNotResult(false);
         dispatch(updateCards({ ...res, results: filterCard }));
         setLoading(false);

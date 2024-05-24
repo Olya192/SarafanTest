@@ -49,16 +49,14 @@ export const Cards = ({ card, key }: CardProps) => {
   const delCard = (e: React.MouseEvent<HTMLImageElement>): void => {
     e.stopPropagation();
     let redactCards = [...cards.results];
-    let delCard = [];
     for (let i = 0; i < redactCards.length; i++) {
       console.log("1");
       if (card.id === redactCards[i].id) {
         console.log("redactCards", redactCards);
         redactCards.splice(i, 1);
-        delCard.push(card.id);
         console.log("redactCards2", redactCards);
         dispatch(updateCards({ results: redactCards }));
-        dispatch(delCards({ delId: delCard }));
+        dispatch(delCards({ delId: card.id }));
         return;
       }
     }
