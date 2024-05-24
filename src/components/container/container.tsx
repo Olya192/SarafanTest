@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { getCards, getLikedCards } from "../../Api";
 import { updateCards } from "../../slice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-
+import { Console } from "console";
 
 export const Container = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -17,6 +17,7 @@ export const Container = () => {
   const dispatch = useAppDispatch();
   const cards = useAppSelector((store) => store.cards);
   const likes = useAppSelector((store) => store.like.like);
+  const delCard = useAppSelector((store) => store.like.delId);
 
   const cardsList = () => {
     setLoading(true);
@@ -27,7 +28,12 @@ export const Container = () => {
         setLoading(false);
       } else {
         console.log(res);
-        dispatch(updateCards(res));
+        const filterCard = res.results.filter(
+          (item: CardInfo) => !delCard.find((el) => el === item.id)
+        );
+        console.log("filterCard", filterCard);
+        setNotResult(false);
+        dispatch(updateCards({ ...res, results: filterCard }));
         setLoading(false);
       }
     });
@@ -91,36 +97,35 @@ export const Container = () => {
 
       <S.MainCards>
         <S.CenterBlock>
-            {cards.results?.map((card: CardInfo) => (
-          <Cards data-testid="users" key={card.id} card={card} />
-        ))}
+          {cards.results?.map((card: CardInfo) => (
+            <Cards data-testid="users" key={card.id} card={card} />
+          ))}
         </S.CenterBlock>
-      <div>
-         {cards && (
-          <S.PagBlock>
-            <S.PagButton
-              onClick={() => choicePage(10)}
-              style={{
-                visibility:
-                  cards.results.length !== 0 ||
-                  page.current < cards.totalResults
-                    ? "visible"
-                    : "hidden",
-              }}
-            >
-              {" "}
-              Вперед
-            </S.PagButton>
-            <S.PagButton
-              onClick={() => choicePage(-10)}
-              style={{ visibility: page.current > 8 ? "visible" : "hidden" }}
-            >
-              Назад
-            </S.PagButton>
-          </S.PagBlock>
-        )}
-      </div>
-       
+        <div>
+          {cards && (
+            <S.PagBlock>
+              <S.PagButton
+                onClick={() => choicePage(10)}
+                style={{
+                  visibility:
+                    cards.results.length !== 0 ||
+                    page.current < cards.totalResults
+                      ? "visible"
+                      : "hidden",
+                }}
+              >
+                {" "}
+                Вперед
+              </S.PagButton>
+              <S.PagButton
+                onClick={() => choicePage(-10)}
+                style={{ visibility: page.current > 8 ? "visible" : "hidden" }}
+              >
+                Назад
+              </S.PagButton>
+            </S.PagBlock>
+          )}
+        </div>
       </S.MainCards>
     </>
   );

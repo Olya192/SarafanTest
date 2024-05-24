@@ -28,10 +28,12 @@ export const { updateCards } = cardsSlice.actions;
 
 interface likeState {
     like: Array<number>;
+    delId:Array<number>
 }
 
 const initialStateLike: likeState = {
-    like: []
+    like: [],
+    delId:[]
 };
 
 export const likeSlice = createSlice({
@@ -40,12 +42,14 @@ export const likeSlice = createSlice({
     reducers: {
         likeCards: (state, action) => {
             state.like = action.payload.like
-
+        },
+        delCards: (state, action) => {
+            state.delId.push(action.payload.delId)
         },
     },
 });
 
-export const { likeCards } = likeSlice.actions;
+export const { likeCards, delCards } = likeSlice.actions;
 
 interface recipeState {
     recipe: {

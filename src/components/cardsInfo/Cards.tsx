@@ -2,7 +2,7 @@ import * as S from "./Cards.Styles";
 import dislike from "./3643770-favorite-heart-like-likes-love-loved_113432.svg";
 import like from "./heart_like_love_twitter_icon_127132.svg";
 import delImg from "./biggarbagebin_121980.svg";
-import { updateCards, likeCards, recipeCards } from "../../slice";
+import { updateCards, likeCards, recipeCards, delCards } from "../../slice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { useEffect, useState } from "react";
 import { getRecipe } from "../../Api";
@@ -49,13 +49,16 @@ export const Cards = ({ card, key }: CardProps) => {
   const delCard = (e: React.MouseEvent<HTMLImageElement>): void => {
     e.stopPropagation();
     let redactCards = [...cards.results];
+    let delCard = [];
     for (let i = 0; i < redactCards.length; i++) {
       console.log("1");
       if (card.id === redactCards[i].id) {
         console.log("redactCards", redactCards);
         redactCards.splice(i, 1);
+        delCard.push(card.id);
         console.log("redactCards2", redactCards);
         dispatch(updateCards({ results: redactCards }));
+        dispatch(delCards({ delId: delCard }));
         return;
       }
     }
