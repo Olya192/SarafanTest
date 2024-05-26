@@ -23,7 +23,6 @@ type CardProps = {
 export const Cards = ({ card, key }: CardProps) => {
   const [favor, setfavor] = useState(false);
   const navigate = useNavigate();
-
   const dispatch = useAppDispatch();
   const cards = useAppSelector((store) => store.cards);
   const likes = useAppSelector((store) => store.like.like);
@@ -49,6 +48,13 @@ export const Cards = ({ card, key }: CardProps) => {
   const delCard = (e: React.MouseEvent<HTMLImageElement>): void => {
     e.stopPropagation();
     let redactCards = [...cards.results];
+    let likeCard = [...likes];
+    for (let i = 0; i < likeCard.length; i++) {
+      if (card.id === likeCard[i]) {
+        likeCard.splice(i, 1);
+        dispatch(likeCards({ like: likeCard }));
+      }
+    }
     for (let i = 0; i < redactCards.length; i++) {
       console.log("1");
       if (card.id === redactCards[i].id) {
